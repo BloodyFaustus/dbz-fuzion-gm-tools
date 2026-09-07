@@ -1,0 +1,45 @@
+{
+    "id":  "dbz-fuzion-gm-tools",
+    "title":  "DBZ Fuzion Calibrated GM Tools",
+    "description":  "GM-only calibration, XP, and legacy NPC tools for DBZ Fuzion Redux - Calibrated.",
+    "version":  "20.45",
+    "compatibility":  {
+                          "minimum":  "13",
+                          "verified":  "13"
+                      },
+    "authors":  [
+                    {
+                        "name":  "DBZ Fuzion Foundry Project"
+                    }
+                ],
+    "esmodules":  [
+                      "dbz-fuzion-gm-tools.mjs"
+                  ],
+    "styles":  [
+                   "styles/gm-tools.css"
+               ],
+    "relationships":  {
+                          "requires":  [
+                                           {
+                                               "id":  "dbz-fuzion-calibrated",
+                                               "type":  "system",
+                                               "compatibility":  {
+                                                                     "minimum":  "0.1.0"
+                                                                 }
+                                           }
+                                       ]
+                      },
+    "packs":  [
+                  {
+                      "name":  "legacy-npcs",
+                      "label":  "DBZ Fuzion Legacy NPCs",
+                      "path":  "packs/legacy-npcs",
+                      "type":  "Actor",
+                      "system":  "dbz-fuzion-calibrated",
+                      "ownership":  {
+                                        "PLAYER":  "NONE",
+                                        "ASSISTANT":  "OWNER"
+                                    }
+                  }
+              ]
+}

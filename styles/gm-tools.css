@@ -1,0 +1,237 @@
+/* DBZ Fuzion GM Tools — matches the system's visual language.
+   Tokens come from the system stylesheet's :root; every var() carries a fallback so the panel
+   still renders correctly if the module is loaded without the system. */
+
+.dbzf-gm-tools-app .window-content {
+  padding: 0;
+  overflow: hidden;
+  background: var(--dbzf-bg-deep, #0E1218);
+}
+
+.dbzf-gm-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  min-height: 100%;
+  overflow: auto;
+  color: var(--dbzf-text, #E8EDF4);
+  background: var(--dbzf-bg-deep, #0E1218);
+  font-family: var(--dbzf-font-body, system-ui, sans-serif);
+}
+
+.dbzf-gm-tool-section {
+  border: 1px solid var(--dbzf-border, #2C333E);
+  border-radius: 6px;
+  padding: 10px;
+  background: var(--dbzf-bg-panel, #1A1F27);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dbzf-gm-tool-section h2 {
+  margin: 0;
+  border: none;
+  font-family: var(--dbzf-font-display, system-ui, sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: var(--dbzf-text, #E8EDF4);
+}
+
+.dbzf-gm-muted {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--dbzf-text-muted, #9BA6B5);
+}
+
+.dbzf-gm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dbzf-gm-tools button {
+  min-height: 30px;
+  width: auto;
+  padding: 4px 12px;
+  border: 1px solid var(--dbzf-border-strong, #3D4653);
+  border-radius: 4px;
+  background: var(--dbzf-bg-raised, #222833);
+  color: var(--dbzf-text, #E8EDF4);
+  font-family: var(--dbzf-font-body, system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  text-shadow: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.dbzf-gm-tools button:hover {
+  background: var(--dbzf-border, #2C333E);
+  border-color: var(--dbzf-ki, #F5A623);
+  color: var(--dbzf-ki, #F5A623);
+}
+
+.dbzf-gm-tools button:disabled { opacity: .4; pointer-events: none; }
+
+.dbzf-gm-tools label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dbzf-gm-tools label > span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--dbzf-text-muted, #9BA6B5);
+}
+
+.dbzf-gm-tools form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.dbzf-gm-tools form > label { width: 100%; }
+
+.dbzf-gm-tools input {
+  width: 100%;
+  min-height: 28px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--dbzf-text, #E8EDF4);
+  background: var(--dbzf-bg-input, #0F141A);
+  border: 1px solid var(--dbzf-border, #2C333E);
+  font-family: var(--dbzf-font-body, system-ui, sans-serif);
+}
+
+.dbzf-gm-tools input:focus {
+  outline: none;
+  border-color: var(--dbzf-ki, #F5A623);
+  box-shadow: 0 0 0 2px var(--dbzf-ki-glow, rgba(245, 166, 35, .35));
+}
+
+.dbzf-gm-canon-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.dbzf-gm-canon-list article {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(6rem, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border: 1px solid var(--dbzf-border, #2C333E);
+  border-radius: 4px;
+  background: var(--dbzf-bg-input, #0F141A);
+  font-size: 13px;
+}
+
+.dbzf-gm-canon-list article > span:last-of-type {
+  font-family: var(--dbzf-font-readout, ui-monospace, monospace);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--dbzf-ki, #F5A623);
+}
+
+.dbzf-gm-canon-list small {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  color: var(--dbzf-text-faint, #6B7688);
+}
+
+.dbzf-gm-tools pre {
+  max-height: 12rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  margin: 0;
+  padding: 8px;
+  font-family: var(--dbzf-font-readout, ui-monospace, monospace);
+  font-size: 12px;
+  color: var(--dbzf-text, #E8EDF4);
+  background: var(--dbzf-bg-input, #0F141A);
+  border: 1px solid var(--dbzf-border, #2C333E);
+  border-radius: 4px;
+}
+
+.dbzf-gm-warning {
+  color: var(--dbzf-danger, #E4443A);
+  font-weight: 700;
+}
+
+/* ---- GM calibration report posted to chat ---- */
+
+.dbzf-gm-report {
+  --edge: var(--dbzf-warn, #E0912F);
+  background: var(--dbzf-bg-panel, #1A1F27);
+  border: 1px solid var(--dbzf-border, #2C333E);
+  border-left: 3px solid var(--edge);
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--dbzf-text, #E8EDF4);
+  font-family: var(--dbzf-font-body, system-ui, sans-serif);
+  font-size: 13px;
+  text-shadow: none;
+  overflow-wrap: anywhere;
+}
+
+.dbzf-gm-report h2 {
+  margin: 0 0 6px;
+  border: none;
+  font-family: var(--dbzf-font-display, system-ui, sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: var(--dbzf-text, #E8EDF4);
+  text-shadow: none;
+}
+
+.dbzf-gm-report-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 6px 0 0;
+}
+
+.dbzf-gm-report-grid > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 3px 0;
+  border-bottom: 1px solid var(--dbzf-border, #2C333E);
+  min-width: 0;
+}
+
+.dbzf-gm-report-grid > div:last-child { border-bottom: none; }
+
+.dbzf-gm-report-grid strong {
+  min-width: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--dbzf-text-muted, #9BA6B5);
+  text-shadow: none;
+}
+
+.dbzf-gm-report-grid span {
+  text-align: right;
+  font-family: var(--dbzf-font-readout, ui-monospace, monospace);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--dbzf-text, #E8EDF4);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-shadow: none;
+}

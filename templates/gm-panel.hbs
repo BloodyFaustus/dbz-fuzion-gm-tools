@@ -1,0 +1,57 @@
+<section class="dbzf-gm-tools">
+  {{#unless isGM}}
+    <p class="dbzf-gm-warning">GM only.</p>
+  {{else}}
+    <section class="dbzf-gm-tool-section">
+      <h2>Power Calibration</h2>
+      {{#if actor}}
+        <p class="dbzf-gm-muted">Selected actor: <strong>{{actor.name}}</strong></p>
+      {{else}}
+        <p class="dbzf-gm-muted">Select a token or assign a user character to run actor calibration tools.</p>
+      {{/if}}
+      <div class="dbzf-gm-actions">
+        <button type="button" data-action="calibration-report" {{#if busy}}disabled{{/if}}>Post GM Report</button>
+        <button type="button" data-action="apply-suggested" {{#if busy}}disabled{{/if}}>Apply Suggested BP</button>
+      </div>
+    </section>
+
+    <section class="dbzf-gm-tool-section">
+      <h2>Legacy NPC Compendium</h2>
+      <p class="dbzf-gm-muted">{{packLabel}} currently indexes {{packCount}} actors.</p>
+      <div class="dbzf-gm-actions">
+        <button type="button" data-action="dry-run" {{#if busy}}disabled{{/if}}>Dry Run Import</button>
+        <button type="button" data-action="seed-npcs" {{#if busy}}disabled{{/if}}>Seed / Update Legacy NPCs</button>
+      </div>
+    </section>
+
+    <section class="dbzf-gm-tool-section">
+      <h2>Canon Power Lookup</h2>
+      <form>
+        <label>
+          <span>Character Search</span>
+          <input type="search" name="canonSearch" placeholder="Goku, Vegeta, Frieza..." />
+        </label>
+        <button type="submit" {{#if busy}}disabled{{/if}}>Search Canon Rows</button>
+      </form>
+      {{#if canonRows.length}}
+        <div class="dbzf-gm-canon-list">
+          {{#each canonRows as |row|}}
+            <article>
+              <strong>{{row.character}}</strong>
+              <span>{{row.form_or_context}}</span>
+              <span>{{row.bp_min}}{{#if row.bp_max}} - {{row.bp_max}}{{/if}}</span>
+              <small>{{row.series}} / {{row.saga}}</small>
+            </article>
+          {{/each}}
+        </div>
+      {{/if}}
+    </section>
+
+    {{#if result}}
+      <section class="dbzf-gm-tool-section">
+        <h2>Last Result</h2>
+        <pre>{{resultString}}</pre>
+      </section>
+    {{/if}}
+  {{/unless}}
+</section>
