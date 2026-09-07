@@ -3,6 +3,10 @@
     "title":  "DBZ Fuzion Calibrated GM Tools",
     "description":  "GM-only calibration, XP, and legacy NPC tools for DBZ Fuzion Redux - Calibrated.",
     "version":  "20.45",
+    "url":  "https://github.com/BloodyFaustus/dbz-fuzion-gm-tools",
+    "license":  "https://github.com/BloodyFaustus/dbz-fuzion-gm-tools/blob/main/LICENSE",
+    "manifest":  "https://raw.githubusercontent.com/BloodyFaustus/dbz-fuzion-gm-tools/main/module.json",
+    "download":  "https://github.com/BloodyFaustus/dbz-fuzion-gm-tools/releases/download/v20.45/dbz-fuzion-gm-tools.zip",
     "compatibility":  {
                           "minimum":  "13",
                           "verified":  "13"
