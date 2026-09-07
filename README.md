@@ -15,6 +15,16 @@ Current GM APIs are exposed under `game.dbzfGmTools`:
 
 The legacy NPC pack is intended for GM use and ships with player ownership disabled.
 
+## License
+
+Licensed under the [Apache License 2.0](LICENSE). You may use, modify and redistribute
+this, including commercially and in closed-source spin-offs, provided you keep the copyright
+notice and the [NOTICE](NOTICE) file, and state what you changed. The licence grants no rights
+to the author's name or branding.
+
+The two data files described below are the exception: they are CC BY-SA 3.0, not Apache.
+See [NOTICE](NOTICE).
+
 ## Data sources and attribution
 
 `data/canon/canon_power_levels_curated.json` is curated from the Dragon Ball Wiki page
